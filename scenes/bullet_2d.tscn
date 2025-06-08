@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dspuy1oyhxr76"]
+
+[ext_resource type="Script" uid="uid://kvm1sx31yudj" path="res://scripts/Bullet2d.cs" id="1_63xbv"]
+[ext_resource type="Texture2D" uid="uid://c2tmr8n4ij23w" path="res://assets/PNG/Default size/bulletRed1.png" id="2_1n1i2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63xbv"]
+radius = 163.0
+height = 326.0
+
+[node name="BulletScene" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Bullet" type="Area2D" parent="." groups=["bullets"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_63xbv")
+Speed = 30000.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
+position = Vector2(-6.99998, 15)
+scale = Vector2(133.887, 132.429)
+texture = ExtResource("2_1n1i2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+position = Vector2(0, 656)
+shape = SubResource("CapsuleShape2D_63xbv")
