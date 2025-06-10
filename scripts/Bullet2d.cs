@@ -5,7 +5,7 @@ public partial class Bullet2d : Area2D
 {
 	[Export] // Godot editöründen değeri ayarlamamızı sağlar
 	public float Speed = 10000.0f; // Mermi hızı (piksel/saniye)
-	public int Damage = 10;
+	public int Damage = 100;
 	private Vector2 _direction = Vector2.Zero;
 
 	public override void _Ready()
@@ -31,13 +31,11 @@ public partial class Bullet2d : Area2D
 
 	public void OnBodyEntered(Node body)
 	{
-		GD.Print($"Mermi çarptı: {body.Name}");
-		if (body is BaseTank tank)
+		if (body.HasMethod("TakeDamage"))
 		{
-			tank.TakeDamage(Damage);
+			body.Call("TakeDamage", Damage);
 		}
 
-		GD.Print($"Mermi çarptı: {body.Name}");
 		QueueFree();
 	}
 }

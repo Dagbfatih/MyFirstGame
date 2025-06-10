@@ -11,6 +11,8 @@ public partial class Hero2D : BaseTank
             Keybinds.ArrowUp,
             Keybinds.ArrowDown,
             Keybinds.Space);
+
+        this.Type = "hero";
     }
 
     public override void _Process(double delta)

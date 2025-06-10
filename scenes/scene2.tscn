@@ -1,23 +1,23 @@
-[gd_scene load_steps=20 format=4 uid="uid://ckestu3elhabu"]
+[gd_scene load_steps=20 format=4 uid="uid://cb1kgjjpfrlo6"]
 
-[ext_resource type="Texture2D" uid="uid://bp5qq2ttoade4" path="res://assets/PNG/Default size/tankBody_blue.png" id="1_3gaup"]
-[ext_resource type="Script" uid="uid://c0levhxokyruc" path="res://scripts/Hero2D.cs" id="1_3meph"]
-[ext_resource type="PackedScene" uid="uid://dspuy1oyhxr76" path="res://scenes/bullet_2d.tscn" id="2_3meph"]
-[ext_resource type="Texture2D" uid="uid://cyf2oqgd0trvd" path="res://assets/Tilesheet/terrainTiles_default.png" id="3_eec0m"]
-[ext_resource type="PackedScene" uid="uid://d00cldb1dwpu0" path="res://scenes/explosion_scene.tscn" id="3_juuys"]
-[ext_resource type="Script" uid="uid://dfhwoosvfuxg4" path="res://scripts/Enemy.cs" id="4_2gst1"]
-[ext_resource type="Texture2D" uid="uid://dgjkmmy5e8bnn" path="res://assets/PNG/Default size/tankBody_red.png" id="4_eec0m"]
-[ext_resource type="PackedScene" uid="uid://bo37wgedmxkaj" path="res://scenes/components/health_component.tscn" id="5_dqloj"]
-[ext_resource type="PackedScene" uid="uid://dogpri1tpcx8l" path="res://scenes/components/HealthbarComponent.tscn" id="6_0f71q"]
-[ext_resource type="PackedScene" uid="uid://b6maxc657p6oq" path="res://scenes/components/hitbox_component.tscn" id="6_5yiy0"]
-[ext_resource type="Texture2D" uid="uid://bj34s10tq25gm" path="res://assets/Spritesheet/allSprites_default.png" id="7_p0une"]
-[ext_resource type="Texture2D" uid="uid://c80sergpmgi33" path="res://assets/Spritesheet/onlyObjects_default.png" id="8_3qqfp"]
+[ext_resource type="Script" uid="uid://c0levhxokyruc" path="res://scripts/Hero2D.cs" id="1_arbih"]
+[ext_resource type="PackedScene" uid="uid://dspuy1oyhxr76" path="res://scenes/bullet_2d.tscn" id="2_6x8df"]
+[ext_resource type="PackedScene" uid="uid://d00cldb1dwpu0" path="res://scenes/explosion_scene.tscn" id="3_aoyh8"]
+[ext_resource type="Texture2D" uid="uid://bp5qq2ttoade4" path="res://assets/PNG/Default size/tankBody_blue.png" id="4_x38j3"]
+[ext_resource type="PackedScene" uid="uid://bo37wgedmxkaj" path="res://scenes/components/health_component.tscn" id="5_3eo47"]
+[ext_resource type="PackedScene" uid="uid://b6maxc657p6oq" path="res://scenes/components/hitbox_component.tscn" id="6_kjohx"]
+[ext_resource type="Script" uid="uid://dfhwoosvfuxg4" path="res://scripts/Enemy.cs" id="7_lslbq"]
+[ext_resource type="Texture2D" uid="uid://dgjkmmy5e8bnn" path="res://assets/PNG/Default size/tankBody_red.png" id="8_ga8du"]
+[ext_resource type="Texture2D" uid="uid://cyf2oqgd0trvd" path="res://assets/Tilesheet/terrainTiles_default.png" id="9_aqtpa"]
+[ext_resource type="Texture2D" uid="uid://bj34s10tq25gm" path="res://assets/Spritesheet/allSprites_default.png" id="10_osnjv"]
+[ext_resource type="Texture2D" uid="uid://c80sergpmgi33" path="res://assets/Spritesheet/onlyObjects_default.png" id="11_tfi5u"]
+[ext_resource type="PackedScene" uid="uid://dogpri1tpcx8l" path="res://scenes/components/HealthbarComponent.tscn" id="12_xxmf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gst1"]
 size = Vector2(1305.5, 1423)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qqfp"]
-texture = ExtResource("3_eec0m")
+texture = ExtResource("9_aqtpa")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -660,7 +660,7 @@ texture = ExtResource("3_eec0m")
 39:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juuys"]
-texture = ExtResource("7_p0une")
+texture = ExtResource("10_osnjv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1914,7 +1914,7 @@ texture = ExtResource("7_p0une")
 34:34/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_547sm"]
-texture = ExtResource("8_3qqfp")
+texture = ExtResource("11_tfi5u")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4377,26 +4377,26 @@ position = Vector2(18043, 0)
 rotation = -3.14159
 scale = Vector2(2, 2)
 collision_mask = 7
-script = ExtResource("1_3meph")
-BulletScene = ExtResource("2_3meph")
-ExplosionEffectScene = ExtResource("3_juuys")
+script = ExtResource("1_arbih")
+BulletScene = ExtResource("2_6x8df")
+ExplosionEffectScene = ExtResource("3_aoyh8")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Hero2D"]
 position = Vector2(34.0001, 61)
 rotation = -1.5708
 scale = Vector2(33.7895, 37.6316)
-texture = ExtResource("1_3gaup")
+texture = ExtResource("4_x38j3")
 
 [node name="Muzzle" type="Marker2D" parent="World/Hero2D"]
 position = Vector2(744, 76)
 rotation = -1.5708
 gizmo_extents = 319.0
 
-[node name="HealthComponent" parent="World/Hero2D" node_paths=PackedStringArray("HealthbarComponent") instance=ExtResource("5_dqloj")]
+[node name="HealthComponent" parent="World/Hero2D" node_paths=PackedStringArray("HealthbarComponent") instance=ExtResource("5_3eo47")]
 HealthbarComponent = NodePath("../../../UI/HeroHealthbar")
 
-[node name="HitboxComponent" parent="World/Hero2D" node_paths=PackedStringArray("HealthComponent") instance=ExtResource("6_5yiy0")]
+[node name="HitboxComponent" parent="World/Hero2D" node_paths=PackedStringArray("HealthComponent") instance=ExtResource("6_kjohx")]
 collision_mask = 7
 HealthComponent = NodePath("../HealthComponent")
 
@@ -4416,27 +4416,27 @@ shape = SubResource("RectangleShape2D_2gst1")
 position = Vector2(-19078, 0)
 scale = Vector2(2, 2)
 collision_mask = 7
-script = ExtResource("4_2gst1")
-BulletScene = ExtResource("2_3meph")
-ExplosionEffectScene = ExtResource("3_juuys")
+script = ExtResource("7_lslbq")
+BulletScene = ExtResource("2_6x8df")
+ExplosionEffectScene = ExtResource("3_aoyh8")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Enemies/Enemy"]
 position = Vector2(53.8289, 61)
 rotation = -1.5708
 scale = Vector2(33.7895, 38.7332)
-texture = ExtResource("4_eec0m")
+texture = ExtResource("8_ga8du")
 
 [node name="Muzzle" type="Marker2D" parent="World/Enemies/Enemy"]
 position = Vector2(744, 76)
 rotation = -1.5708
 gizmo_extents = 319.0
 
-[node name="HealthComponent" parent="World/Enemies/Enemy" node_paths=PackedStringArray("HealthbarComponent") instance=ExtResource("5_dqloj")]
+[node name="HealthComponent" parent="World/Enemies/Enemy" node_paths=PackedStringArray("HealthbarComponent") instance=ExtResource("5_3eo47")]
 position = Vector2(-10000, 0)
 HealthbarComponent = NodePath("../../../../UI/EnemyHealthbar")
 
-[node name="HitboxComponent" parent="World/Enemies/Enemy" node_paths=PackedStringArray("HealthComponent") instance=ExtResource("6_5yiy0")]
+[node name="HitboxComponent" parent="World/Enemies/Enemy" node_paths=PackedStringArray("HealthComponent") instance=ExtResource("6_kjohx")]
 collision_mask = 7
 HealthComponent = NodePath("../HealthComponent")
 
@@ -4465,7 +4465,7 @@ metadata/_edit_group_ = true
 [node name="Obstacles" type="TileMapLayer" parent="World/Map"]
 use_parent_material = true
 scale = Vector2(100, 100)
-tile_map_data = PackedByteArray("AAD//wAAAQAEAAwAAAD//wEAAQAEAA0AAAD//wIAAQAEAA4AAAD//wMAAQAEAA8AAAAAAAAAAQAFAAwAAAAAAAEAAQAFAA0AAAAAAAIAAQAFAA4AAAAAAAMAAQAFAA8AAAABAAAAAQAGAAwAAAABAAEAAQAGAA0AAAABAAIAAQAGAA4AAAABAAMAAQAGAA8AAAACAAAAAQAHAAwAAAACAAEAAQAHAA0AAAACAAIAAQAHAA4AAAACAAMAAQAHAA8AAAAKAPX/AQAEAAwAAAAKAPb/AQAEAA0AAAAKAPf/AQAEAA4AAAAKAPj/AQAEAA8AAAALAPX/AQAFAAwAAAALAPb/AQAFAA0AAAALAPf/AQAFAA4AAAALAPj/AQAFAA8AAAAMAPX/AQAGAAwAAAAMAPb/AQAGAA0AAAAMAPf/AQAGAA4AAAAMAPj/AQAGAA8AAAANAPX/AQAHAAwAAAANAPb/AQAHAA0AAAANAPf/AQAHAA4AAAANAPj/AQAHAA8AAAD0/wMAAQAAABwAAAD0/wQAAQAAAB0AAAD0/wUAAQAAAB4AAAD0/wYAAQAAAB8AAAD1/wMAAQABABwAAAD1/wQAAQABAB0AAAD1/wUAAQABAB4AAAD1/wYAAQABAB8AAAD2/wMAAQACABwAAAD2/wQAAQACAB0AAAD2/wUAAQACAB4AAAD2/wYAAQACAB8AAAD3/wMAAQADABwAAAD3/wQAAQADAB0AAAD3/wUAAQADAB4AAAD3/wYAAQADAB8AAAD1//T/AQAAABwAAAD1//X/AQAAAB0AAAD1//b/AQAAAB4AAAD1//f/AQAAAB8AAAD2//T/AQABABwAAAD2//X/AQABAB0AAAD2//b/AQABAB4AAAD2//f/AQABAB8AAAD3//T/AQACABwAAAD3//X/AQACAB0AAAD3//b/AQACAB4AAAD3//f/AQACAB8AAAD4//T/AQADABwAAAD4//X/AQADAB0AAAD4//b/AQADAB4AAAD4//f/AQADAB8AAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAQAEAAwAAAD//wEAAQAEAA0AAAD//wIAAQAEAA4AAAD//wMAAQAEAA8AAAAAAAAAAQAFAAwAAAAAAAEAAQAFAA0AAAAAAAIAAQAFAA4AAAAAAAMAAQAFAA8AAAABAAAAAQAGAAwAAAABAAEAAQAGAA0AAAABAAIAAQAGAA4AAAABAAMAAQAGAA8AAAACAAAAAQAHAAwAAAACAAEAAQAHAA0AAAACAAIAAQAHAA4AAAACAAMAAQAHAA8AAAAKAPX/AQAEAAwAAAAKAPb/AQAEAA0AAAAKAPf/AQAEAA4AAAAKAPj/AQAEAA8AAAALAPX/AQAFAAwAAAALAPb/AQAFAA0AAAALAPf/AQAFAA4AAAALAPj/AQAFAA8AAAAMAPX/AQAGAAwAAAAMAPb/AQAGAA0AAAAMAPf/AQAGAA4AAAAMAPj/AQAGAA8AAAANAPX/AQAHAAwAAAANAPb/AQAHAA0AAAANAPf/AQAHAA4AAAANAPj/AQAHAA8AAAD0/wMAAQAAABwAAAD0/wQAAQAAAB0AAAD0/wUAAQAAAB4AAAD0/wYAAQAAAB8AAAD1/wMAAQABABwAAAD1/wQAAQABAB0AAAD1/wUAAQABAB4AAAD1/wYAAQABAB8AAAD2/wMAAQACABwAAAD2/wQAAQACAB0AAAD2/wUAAQACAB4AAAD2/wYAAQACAB8AAAD3/wMAAQADABwAAAD3/wQAAQADAB0AAAD3/wUAAQADAB4AAAD3/wYAAQADAB8AAAD1//T/AQAAABwAAAD1//X/AQAAAB0AAAD1//b/AQAAAB4AAAD1//f/AQAAAB8AAAD2//T/AQABABwAAAD2//X/AQABAB0AAAD2//b/AQABAB4AAAD2//f/AQABAB8AAAD3//T/AQACABwAAAD3//X/AQACAB0AAAD3//b/AQACAB4AAAD3//f/AQACAB8AAAD4//T/AQADABwAAAD4//X/AQADAB0AAAD4//b/AQADAB4AAAD4//f/AQADAB8AAAD///f/AQAEAAwAAAD///j/AQAEAA0AAAD///n/AQAEAA4AAAD///r/AQAEAA8AAAAAAPf/AQAFAAwAAAAAAPj/AQAFAA0AAAAAAPn/AQAFAA4AAAAAAPr/AQAFAA8AAAABAPf/AQAGAAwAAAABAPj/AQAGAA0AAAABAPn/AQAGAA4AAAABAPr/AQAGAA8AAAACAPf/AQAHAAwAAAACAPj/AQAHAA0AAAACAPn/AQAHAA4AAAACAPr/AQAHAA8AAAALAAMAAQAEAAwAAAALAAQAAQAEAA0AAAALAAUAAQAEAA4AAAALAAYAAQAEAA8AAAAMAAMAAQAFAAwAAAAMAAQAAQAFAA0AAAAMAAUAAQAFAA4AAAAMAAYAAQAFAA8AAAANAAMAAQAGAAwAAAANAAQAAQAGAA0AAAANAAUAAQAGAA4AAAANAAYAAQAGAA8AAAAOAAMAAQAHAAwAAAAOAAQAAQAHAA0AAAAOAAUAAQAHAA4AAAAOAAYAAQAHAA8AAADt/wIAAQAAABwAAADt/wMAAQAAAB0AAADt/wQAAQAAAB4AAADt/wUAAQAAAB8AAADu/wIAAQABABwAAADu/wMAAQABAB0AAADu/wQAAQABAB4AAADu/wUAAQABAB8AAADv/wIAAQACABwAAADv/wMAAQACAB0AAADv/wQAAQACAB4AAADv/wUAAQACAB8AAADw/wIAAQADABwAAADw/wMAAQADAB0AAADw/wQAAQADAB4AAADw/wUAAQADAB8AAAA=")
 tile_set = SubResource("TileSet_juuys")
 metadata/_edit_group_ = true
 
@@ -4523,14 +4523,14 @@ shape = SubResource("RectangleShape2D_3qqfp")
 [node name="UI" type="CanvasLayer" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="HeroHealthbar" parent="UI" instance=ExtResource("6_0f71q")]
+[node name="HeroHealthbar" parent="UI" instance=ExtResource("12_xxmf0")]
 offset_left = 950.0
 offset_top = 20.0
 offset_right = -2071.86
 offset_bottom = -1723.99
 theme_override_font_sizes/font_size = 50
 
-[node name="EnemyHealthbar" parent="UI" instance=ExtResource("6_0f71q")]
+[node name="EnemyHealthbar" parent="UI" instance=ExtResource("12_xxmf0")]
 offset_left = 13.0
 offset_top = 18.0
 offset_right = -3005.86

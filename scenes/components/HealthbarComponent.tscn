@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dogpri1tpcx8l"]
+
+[ext_resource type="Script" uid="uid://e1rrebv5wynj" path="res://scripts/components/HealthbarComponent.cs" id="1_nb07m"]
+
+[node name="HealthBarComponent" type="ProgressBar"]
+z_index = 2
+anchors_preset = -1
+anchor_right = 2.782
+anchor_bottom = 2.804
+offset_right = 0.135986
+offset_bottom = 0.00793457
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 1000
+value = 30.0
+script = ExtResource("1_nb07m")

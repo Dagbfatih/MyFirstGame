@@ -17,6 +17,8 @@ public abstract partial class BaseTank : CharacterBody2D
     [Export]
     public float RotationSpeed { get; set; } = 3f;
 
+    public string Type { get; set; }
+
     protected float _rotationDirection;
     protected float _canFireTimer = 0.0f; // Ateş edene kadar beklenen süre
     protected Marker2D _muzzle; // Namlu ucunu temsil eden Marker2D Node'u
@@ -28,6 +30,11 @@ public abstract partial class BaseTank : CharacterBody2D
     private string _downKeybind = Keybinds.Down;
     private string _fireKeybind = Keybinds.LeftClick;
 
+    private HealthComponent _healthComponent;
+
+    [Signal]
+    public delegate void TankDestroyedEventHandler(BaseTank baseTank);
+
     public override void _Ready()
     {
         // Namlu ucundaki Marker2D Node'unu bul
@@ -36,7 +43,10 @@ public abstract partial class BaseTank : CharacterBody2D
         {
             GD.PrintErr("Muzzle Marker2D bulunamadı! Lütfen PlayerTank altına bir Marker2D ekleyin ve adını Muzzle yapın.");
         }
+
+        ConnectOnCharacterDiedEvent(new Callable(this, nameof(OnCharacterDied)));
     }
+
 
     public override void _Process(double delta)
     {
@@ -59,6 +69,7 @@ public abstract partial class BaseTank : CharacterBody2D
     public void TakeDamage(int damageAmount)
     {
         var healthComponent = GetNode<HealthComponent>("HealthComponent");
+
         healthComponent.TakeDamage(damageAmount);
     }
 
@@ -99,5 +110,33 @@ public abstract partial class BaseTank : CharacterBody2D
     {
         _rotationDirection = Input.GetAxis(_leftKeybind, _rightKeybind);
         Velocity = Transform.X * Input.GetAxis(_downKeybind, _upKeybind) * Speed;
+    }
+    
+    private void ConnectOnCharacterDiedEvent(Callable callable)
+    {
+        _healthComponent = GetNode<HealthComponent>("HealthComponent");
+
+        if (_healthComponent == null)
+        {
+            return;
+        }
+
+        _healthComponent.Connect(HealthComponent.SignalName.CharacterDied, callable);
+    }
+
+    protected virtual void OnCharacterDied()
+    {
+        SetProcess(false);
+        SetPhysicsProcess(false);
+        SetProcessInput(false);
+
+        if (HasNode("Sprite2D"))
+        {
+            GetNode<Sprite2D>("Sprite2D").Visible = false;
+        }
+
+        EmitSignal(SignalName.TankDestroyed, this);
+
+        QueueFree();
     }
 }

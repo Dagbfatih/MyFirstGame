@@ -17,6 +17,7 @@ public partial class Enemy : BaseTank
             Keybinds.Up,
             Keybinds.Down,
             Keybinds.LeftClick);
+        this.Type = "enemy";
     }
 
     public override void _PhysicsProcess(double delta)

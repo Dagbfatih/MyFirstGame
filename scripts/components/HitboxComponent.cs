@@ -1,12 +1,11 @@
 using Godot;
-using System;
 
 public partial class HitboxComponent : Area2D
 {
     [Export]
     public HealthComponent HealthComponent { get; set; }
 
-    public void Damage(int damage)
+    public void TakeDamage(int damage)
     {
         if (HealthComponent != null)
         {
